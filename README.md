@@ -70,24 +70,9 @@ This section describes the development workflow followed while building the webs
 | GET    | `/api/products`        | Returns all available products      |
 | GET    | `/api/products/{id}`   | Returns a product by its ID         |
 
-> More endpoints (products, orders, etc.) will be added as the project evolves.
+> More endpoints (orders, etc.) will be added as the project evolves.
 
 ## 👤 Author
 
 - Robert Ahlin
 ## Future planning
-
-### Plan för produkthantering    
-**Steg 1** – Skapa Product-modellen  
-Skapa en klass med attributen från specifikationen.  
-
-**Steg 2** – Skapa exempelprodukter i en "Repository"-klass (in-memory)  
-Använda t.ex. en List<Product> som hårdkodas vid start.  
-
-**Steg 3** – Skapa ProductService som hämtar produkter från repository  
-**Steg 4** – Skapa REST-controller med endpoints:  
-- GET /api/products – lista alla produkter  
-
-- GET /api/products/{id} – hämta en produkt baserat på ID  
-
-**Steg 5** – Testa i webbläsare eller Postman
