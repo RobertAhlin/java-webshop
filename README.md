@@ -53,10 +53,23 @@ This section describes the development workflow followed while building the webs
 - Implemented `ProductController` with two REST endpoints:
     - `GET /api/products` – returns all products
     - `GET /api/products/{id}` – returns a single product by ID
-- Verified all product endpoints using Postman
+- Verified all product endpoints using Postman  
 ![postman test products API](readmefiles/postman-products-01.png)
 
-### 4. Documentation
+### 4. Order Management
+- Created model classes: `Order`, `OrderItem`, and `CustomerInfo`
+- Built `OrderRepository` to store orders in-memory
+- Implemented `OrderService` to:
+  - Validate that each ordered product exists
+  - Calculate the total order amount
+  - Generate a unique order ID using `UUID`
+  - Set the current date and time as `orderDate`
+- Created an `OrderRequest` DTO to handle incoming JSON requests
+- Built `OrderController` with a `POST /api/orders` endpoint
+- Successfully tested order placement using Postman  
+![postman test orders API](readmefiles/postman-orders.01.png)
+ 
+### 5. Documentation
 - Maintained and updated this `README.md` continuously during development
 - Included API endpoint descriptions and run instructions
 
@@ -69,6 +82,7 @@ This section describes the development workflow followed while building the webs
 | GET    | `/hello`   | Simple greeting test endpoint  |
 | GET    | `/api/products`        | Returns all available products      |
 | GET    | `/api/products/{id}`   | Returns a product by its ID         |
+| POST   | `/api/orders`    | Places a new order with customer + items    |
 
 > More endpoints (orders, etc.) will be added as the project evolves.
 
