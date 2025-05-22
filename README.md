@@ -32,11 +32,43 @@ git clone https://github.com/RobertAhlin/java-webshop.git
 3. Run the `WebshopApplication.java` class
 4. Open a browser and visit [http://localhost:8080/hello](http://localhost:8080/hello) to test
 
+## Workflow
+
+This section describes the development workflow followed while building the webshop backend.
+
+### 1. Project Setup
+- Created a new Spring Boot project using [start.spring.io](https://start.spring.io)
+- Added dependencies: Spring Web, Lombok, Validation, DevTools
+- Opened the project in IntelliJ IDEA Community Edition
+- Initialized Git and connected to a public GitHub repository
+
+### 2. Initial Testing
+- Implemented a simple `GET /hello` endpoint to verify the app was running
+- Used Postman to confirm the response from the backend
+
+### 3. Product Management
+- Created a `Product` class using Lombok to reduce boilerplate
+- Built an in-memory `ProductRepository` using a `List<Product>` with sample data
+- Added a `ProductService` to separate business logic
+- Implemented `ProductController` with two REST endpoints:
+    - `GET /api/products` – returns all products
+    - `GET /api/products/{id}` – returns a single product by ID
+- Verified all product endpoints using Postman
+![postman test products API](readmefiles/postman-products-01.png)
+
+### 4. Documentation
+- Maintained and updated this `README.md` continuously during development
+- Included API endpoint descriptions and run instructions
+
+
+
 ## API Endpoints (in progress)
 
 | Method | URL        | Description                    |
 |--------|------------|--------------------------------|
 | GET    | `/hello`   | Simple greeting test endpoint  |
+| GET    | `/api/products`        | Returns all available products      |
+| GET    | `/api/products/{id}`   | Returns a product by its ID         |
 
 > More endpoints (products, orders, etc.) will be added as the project evolves.
 
