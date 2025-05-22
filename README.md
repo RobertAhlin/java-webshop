@@ -2,7 +2,7 @@
 
 This is the backend system for a simple webshop project, developed as part of the *Backend Development in Java* course. The application is built using Java and Spring Boot, and it exposes a REST API that can be consumed by a frontend (e.g., React).
 
-## 📦 Technologies & Frameworks
+## Technologies & Frameworks
 
 - Java 21
 - Spring Boot 3.4.5
@@ -13,7 +13,7 @@ This is the backend system for a simple webshop project, developed as part of th
 - In-memory storage using Java Collections (List, Map)
 - JUnit (unit testing – coming later)
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -24,12 +24,15 @@ This is the backend system for a simple webshop project, developed as part of th
 
 ### How to Run
 
-1. Clone or download the project
+1. Clone project to run locally.
+```
+git clone https://github.com/RobertAhlin/java-webshop.git
+```
 2. Open the project in IntelliJ IDEA
 3. Run the `WebshopApplication.java` class
 4. Open a browser and visit [http://localhost:8080/hello](http://localhost:8080/hello) to test
 
-## 🚀 API Endpoints (in progress)
+## API Endpoints (in progress)
 
 | Method | URL        | Description                    |
 |--------|------------|--------------------------------|
@@ -40,3 +43,19 @@ This is the backend system for a simple webshop project, developed as part of th
 ## 👤 Author
 
 - Robert Ahlin
+## Future planning
+
+### Plan för produkthantering    
+**Steg 1** – Skapa Product-modellen  
+Skapa en klass med attributen från specifikationen.  
+
+**Steg 2** – Skapa exempelprodukter i en "Repository"-klass (in-memory)  
+Använda t.ex. en List<Product> som hårdkodas vid start.  
+
+**Steg 3** – Skapa ProductService som hämtar produkter från repository  
+**Steg 4** – Skapa REST-controller med endpoints:  
+- GET /api/products – lista alla produkter  
+
+- GET /api/products/{id} – hämta en produkt baserat på ID  
+
+**Steg 5** – Testa i webbläsare eller Postman
