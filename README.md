@@ -85,8 +85,30 @@ This section describes the development workflow followed while building the webs
   }
 - Successfully tested using Postman  
 - ![Postman test error handling of missing product](readmefiles/postman-test-missing-product_01.png)
- 
-### 6. Documentation
+
+### 6. Validation & Error Formatting
+
+- Added validation annotations (`@NotBlank`, `@NotEmpty`, `@NotNull`, `@Valid`) to `OrderRequest` and `CustomerInfo`
+- Ensured Spring Boot performs input validation on incoming order requests
+- Handled validation errors using `@ExceptionHandler` and `MethodArgumentNotValidException`
+- Returned clean and readable error messages in JSON format for 400 Bad Request responses
+- Example response when submitting an invalid order:
+  ```json
+  {
+    "error": "Bad Request",
+    "message": "Validation failed",
+    "errors": [
+        "items: Order must contain at least one item"
+    ],
+    "timestamp": "2025-05-23T11:15:26.915651",
+    "status": 400
+  }
+
+- Successfully tested using Postman
+- ![Postman test error handling of faulty order](readmefiles/postman-test-faulty-order_01.png)
+
+  
+### 7. Documentation
 - Maintained and updated this `README.md` continuously during development
 - Included API endpoint descriptions and run instructions
 

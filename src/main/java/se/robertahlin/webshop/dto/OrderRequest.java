@@ -1,5 +1,7 @@
 package se.robertahlin.webshop.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +14,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderRequest {
+
+    @NotNull(message = "Customer info is required")
     private CustomerInfo customerInfo;
+
+    @NotEmpty(message = "Order must contain at least one item")
     private List<OrderItem> items;
 }

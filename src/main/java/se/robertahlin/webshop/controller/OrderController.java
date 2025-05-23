@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import se.robertahlin.webshop.dto.OrderRequest;
 import se.robertahlin.webshop.model.Order;
 import se.robertahlin.webshop.service.OrderService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/orders")
@@ -17,7 +18,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<Order> placeOrder(@RequestBody OrderRequest orderRequest) {
+    public ResponseEntity<Order> placeOrder(@Valid @RequestBody OrderRequest orderRequest) {
         Order order = orderService.placeOrder(orderRequest.getItems(), orderRequest.getCustomerInfo());
         return ResponseEntity.ok(order);
     }
