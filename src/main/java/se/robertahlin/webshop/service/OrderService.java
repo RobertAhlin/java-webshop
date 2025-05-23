@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import se.robertahlin.webshop.model.*;
 import se.robertahlin.webshop.repository.OrderRepository;
 import se.robertahlin.webshop.repository.ProductRepository;
+import se.robertahlin.webshop.exception.ProductNotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class OrderService {
 
         for (OrderItem item : orderItems) {
             Product product = productRepository.findById(item.getProductId())
-                    .orElseThrow(() -> new IllegalArgumentException("Product with ID " + item.getProductId() + " not found"));
+                    .orElseThrow(() -> new ProductNotFoundException(item.getProductId()));
 
             double itemTotal = product.getPrice() * item.getQuantity();
             totalAmount += itemTotal;

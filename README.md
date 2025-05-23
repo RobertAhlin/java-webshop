@@ -105,7 +105,7 @@ This section describes the development workflow followed while building the webs
   }
 
 - Successfully tested using Postman  
-- ![Postman test error handling of faulty order](readmefiles/postman-test-faulty-order_01.png)
+![Postman test error handling of faulty order](readmefiles/postman-test-faulty-order_01.png)
 
 ### 7. Unit Testing
 
@@ -115,8 +115,17 @@ This section describes the development workflow followed while building the webs
   - An invalid product ID throws `ProductNotFoundException`
 - Used mock injection with `Mockito.mock()` to isolate service logic
 - Verified all tests pass with `exit code 0`
+- 
+### 8. OrderService Unit Test
 
-### 8. Documentation
+- Created `OrderServiceTest` using JUnit 5 and Mockito
+- Verified that:
+  - A valid order calculates total correctly and saves it
+  - An invalid product ID in the order throws `ProductNotFoundException`
+- Mocked both `ProductRepository` and `OrderRepository` to isolate the logic
+- All tests passed with exit code 0
+
+### 9. Documentation
 - Maintained and updated this `README.md` continuously during development
 - Included API endpoint descriptions and run instructions
 
