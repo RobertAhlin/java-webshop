@@ -84,7 +84,7 @@ This section describes the development workflow followed while building the webs
 | GET    | `/api/products/{id}`   | Returns a product by its ID         |
 | POST   | `/api/orders`    | Places a new order with customer + items    |
 
-> More endpoints (orders, etc.) will be added as the project evolves.
+> More endpoints will be added as the project evolves.
 
 ## 👤 Author
 

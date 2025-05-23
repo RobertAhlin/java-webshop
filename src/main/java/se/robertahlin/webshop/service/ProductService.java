@@ -3,6 +3,7 @@ package se.robertahlin.webshop.service;
 import org.springframework.stereotype.Service;
 import se.robertahlin.webshop.model.Product;
 import se.robertahlin.webshop.repository.ProductRepository;
+import se.robertahlin.webshop.exception.ProductNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +21,8 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Optional<Product> getProductById(long id) {
-        return productRepository.findById(id);
+    public Product getProductById(long id) {
+        return productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(id));
     }
 }
