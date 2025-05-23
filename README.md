@@ -11,7 +11,7 @@ This is the backend system for a simple webshop project, developed as part of th
 - Bean Validation (Jakarta)
 - Spring Boot DevTools (for hot-reloading)
 - In-memory storage using Java Collections (List, Map)
-- JUnit (unit testing – coming later)
+- JUnit (unit testing)
 
 ## Getting Started
 
