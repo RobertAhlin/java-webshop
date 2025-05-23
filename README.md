@@ -146,4 +146,30 @@ This section describes the development workflow followed while building the webs
 
 - Robert Ahlin
 
-## Future planning
+## Project Requirements Checklist
+
+| Area                              | Requirement                                                | Implemented |
+|-----------------------------------|------------------------------------------------------------|-------------|
+| **Core Functionality**            | REST API for product and order management                 | ✅           |
+|                                   | Fetch all products (`GET /api/products`)                   | ✅           |
+|                                   | Fetch single product by ID (`GET /api/products/{id}`)      | ✅           |
+|                                   | Create order (`POST /api/orders`)                          | ✅           |
+|                                   | In-memory storage using Java Collections (`List`, `Map`)   | ✅           |
+|                                   | Basic object-oriented modeling (`Product`, `Order`, etc.)  | ✅           |
+| **Validation & Error Handling**   | Input validation using annotations (`@NotBlank`, etc.)     | ✅           |
+|                                   | Return `400 Bad Request` for invalid input                 | ✅           |
+|                                   | Return `404 Not Found` for missing product ID              | ✅           |
+|                                   | Custom exception handling with `@ControllerAdvice`         | ✅           |
+| **Code Structure**                | Separation into layers: Controller, Service, Repository    | ✅           |
+|                                   | DTO usage for request handling                             | ✅           |
+| **Testing**                       | Unit tests using JUnit 5                                   | ✅           |
+|                                   | ProductService test                                        | ✅           |
+|                                   | OrderService test                                          | ✅           |
+| **Tools & Frameworks**            | Java 21                                                    | ✅           |
+|                                   | Spring Boot 3.4.5                                          | ✅           |
+|                                   | Maven                                                      | ✅           |
+|                                   | JSON-based API communication                               | ✅           |
+| **Documentation**                 | `README.md` with build/run instructions                    | ✅           |
+|                                   | API endpoint overview                                      | ✅           |
+|                                   | Workflow and architecture description                      | ✅           |
+|                                   | Requirements checklist                                     | ✅           |
