@@ -104,11 +104,19 @@ This section describes the development workflow followed while building the webs
     "status": 400
   }
 
-- Successfully tested using Postman
+- Successfully tested using Postman  
 - ![Postman test error handling of faulty order](readmefiles/postman-test-faulty-order_01.png)
 
-  
-### 7. Documentation
+### 7. Unit Testing
+
+- Added unit tests using JUnit 5 and Mockito
+- Created `ProductServiceTest` to verify:
+  - A valid product ID returns the correct product
+  - An invalid product ID throws `ProductNotFoundException`
+- Used mock injection with `Mockito.mock()` to isolate service logic
+- Verified all tests pass with `exit code 0`
+
+### 8. Documentation
 - Maintained and updated this `README.md` continuously during development
 - Included API endpoint descriptions and run instructions
 
