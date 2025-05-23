@@ -173,3 +173,21 @@ This section describes the development workflow followed while building the webs
 |                                   | API endpoint overview                                      | ✅           |
 |                                   | Workflow and architecture description                      | ✅           |
 |                                   | Requirements checklist                                     | ✅           |
+
+## Personal Reflection
+
+This project has been a valuable learning experience in backend development using Java and Spring Boot. Throughout the process, I’ve deepened my understanding of:
+
+- Building REST APIs with Spring Web and `@RestController`
+- Applying object-oriented design principles to model data using classes like `Product`, `Order`, and `CustomerInfo`
+- Storing data in memory using Java Collections (`List`, `Map`) in a way that mimics a database
+- Validating input using annotations like `@NotNull`, `@NotBlank`, and `@Valid`
+- Implementing structured exception handling with custom exceptions and `@ControllerAdvice`
+- Writing unit tests using JUnit and Mockito to ensure that services behave correctly under both normal and exceptional conditions
+- Structuring a backend project into clear layers (controller, service, repository)
+- Working with Maven and understanding dependency management
+- Documenting the API and project workflow clearly using Markdown
+
+Additionally, I’ve learned to troubleshoot problems effectively using IntelliJ and Postman, and how to incrementally build and test features in a realistic development flow.
+
+Overall, this project has helped me feel more confident in developing and testing backend systems in Java and has laid a solid foundation for future projects.
