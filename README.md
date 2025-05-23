@@ -68,8 +68,25 @@ This section describes the development workflow followed while building the webs
 - Built `OrderController` with a `POST /api/orders` endpoint
 - Successfully tested order placement using Postman  
 ![postman test orders API](readmefiles/postman-orders.01.png)
+
+### 5. Error Handling
+
+- Created a custom exception `ProductNotFoundException` to handle cases when a requested product does not exist
+- Refactored `ProductService` to throw this exception when a product is not found
+- Created a `GlobalExceptionHandler` using `@ControllerAdvice` to catch and return structured error responses
+- Implemented a clear JSON error format with timestamp, status code, and message
+- Example response for `GET /api/products/999`:
+  ```json
+  {
+    "error": "Not Found",
+    "message": "Product with ID 999 not found",
+    "timestamp": "2025-05-23T10:57:09.9165029",
+    "status": 404
+  }
+- Successfully tested using Postman  
+- ![Postman test error handling of missing product](readmefiles/postman-test-missing-product_01.png)
  
-### 5. Documentation
+### 6. Documentation
 - Maintained and updated this `README.md` continuously during development
 - Included API endpoint descriptions and run instructions
 
