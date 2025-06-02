@@ -55,6 +55,40 @@ This section describes the development workflow followed while building the webs
     - `GET /api/products/{id}` – returns a single product by ID
 - Verified all product endpoints using Postman  
 ![postman test products API](readmefiles/postman-products-01.png)
+  The application provides a REST API for managing products in a fictional web shop. Products are stored in an in-memory repository (`ProductRepository`) during runtime.
+
+### Create a New Product
+
+- **Endpoint**: `POST /api/products`
+- **Request Body (JSON)**:
+```
+{
+  "name": "Gaming Mouse",
+  "description": "High precision gaming mouse",
+  "price": 599.0,
+  "imageUrl": "https://example.com/mouse.jpg",
+  "stockQuantity": 25,
+  "category": "Electronics"
+}
+```
+- **Response:** The product is saved with an auto-generated ID and returned in the response with status 201 Created.
+
+#### Internal Logic
+When saving through ProductRepository.save():  
+- If a product with the same ID already exists: its fields are updated.
+- If the product's ID is 0 or not in use: a new ID is automatically assigned using an internal counter.
+
+**Example Response**
+```
+{
+  "id": 6,
+  "name": "Gaming Mouse",
+  "description": "High precision gaming mouse",
+  "price": 599.0,
+  "imageUrl": "https://example.com/mouse.jpg",
+  "stock": 25
+}
+```
 
 ### 4. Order Management
 - Created model classes: `Order`, `OrderItem`, and `CustomerInfo`
