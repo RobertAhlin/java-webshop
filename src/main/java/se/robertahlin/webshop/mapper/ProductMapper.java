@@ -13,8 +13,8 @@ public class ProductMapper {
         dto.setName(product.getName());
         dto.setDescription(product.getDescription());
         dto.setPrice(product.getPrice());
-        dto.setStockQuantity(product.getStockQuantity());
-        dto.setCategory(product.getCategory());
+        dto.setImageUrl(product.getImageUrl());
+        dto.setStock(product.getStock());
         return dto;
     }
 
@@ -23,8 +23,8 @@ public class ProductMapper {
         product.setName(req.getName());
         product.setDescription(req.getDescription());
         product.setPrice(req.getPrice());
-        product.setStockQuantity(req.getStockQuantity());
-        product.setCategory(req.getCategory());
+        product.setImageUrl(req.getImageUrl());
+        product.setStock(req.getStockQuantity());
         return product;
     }
 
@@ -32,7 +32,7 @@ public class ProductMapper {
         if (req.getName() != null) product.setName(req.getName());
         if (req.getDescription() != null) product.setDescription(req.getDescription());
         if (req.getPrice() != null) product.setPrice(req.getPrice());
-        if (req.getStockQuantity() != null) product.setStockQuantity(req.getStockQuantity());
-        if (req.getCategory() != null) product.setCategory(req.getCategory());
+        if (req.getImageUrl() != null) product.setImageUrl(req.getImageUrl());
+        if (req.getStockQuantity() != null) product.setStock(req.getStockQuantity());
     }
 }

@@ -7,6 +7,7 @@ public class UpdateProductRequest {
     private String name;
     private String description;
     private Double price;
-    private Integer stockQuantity;
     private String category;
+    private Integer stockQuantity;
+    private String imageUrl;
 }

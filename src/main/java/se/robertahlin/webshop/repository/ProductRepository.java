@@ -11,6 +11,7 @@ import java.util.Optional;
 public class ProductRepository {
 
     private final List<Product> products = new ArrayList<>();
+    private long nextId = 6; // Börja från 6 eftersom det finns 5 produkter från början.
 
     public ProductRepository() {
         products.add(new Product(1, "Coffee Mug", "A stylish ceramic mug.", 99.0, "https://example.com/mug.jpg", 20));
@@ -28,5 +29,25 @@ public class ProductRepository {
         return products.stream()
                 .filter(p -> p.getId() == id)
                 .findFirst();
+    }
+
+    public Product save(Product product) {
+        if (product.getId() == 0) {
+            product.setId(nextId++);
+        } else {
+            // Ta bort eventuell befintlig produkt med samma ID
+            products.removeIf(p -> p.getId() == product.getId());
+        }
+
+        products.add(product);
+        return product;
+    }
+
+    public boolean existsById(long id) {
+        return products.stream().anyMatch(p -> p.getId() == id);
+    }
+
+    public void deleteById(long id) {
+        products.removeIf(p -> p.getId() == id);
     }
 }

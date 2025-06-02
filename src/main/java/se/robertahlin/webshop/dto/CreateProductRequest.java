@@ -1,7 +1,6 @@
 package se.robertahlin.webshop.dto;
 
 import jakarta.validation.constraints.*;
-
 import lombok.Data;
 
 @Data
@@ -19,4 +18,6 @@ public class CreateProductRequest {
     private int stockQuantity;
 
     private String category;
+
+    private String imageUrl;
 }
