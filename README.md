@@ -24,10 +24,10 @@ This is the backend system for a simple webshop project, developed as part of th
 
 ### How to Run
 
-1. Clone project to run locally.
-```
-git clone https://github.com/RobertAhlin/java-webshop.git
-```
+1. Clone project to run locally.  
+  ```
+  git clone https://github.com/RobertAhlin/java-webshop.git
+  ```
 2. Open the project in IntelliJ IDEA
 3. Run the `WebshopApplication.java` class
 4. Open a browser and visit [http://localhost:8080/hello](http://localhost:8080/hello) to test
@@ -167,12 +167,12 @@ When saving through ProductRepository.save():
 
 ## API Endpoints (in progress)
 
-| Method | URL        | Description                    |
-|--------|------------|--------------------------------|
-| GET    | `/hello`   | Simple greeting test endpoint  |
-| GET    | `/api/products`        | Returns all available products      |
-| GET    | `/api/products/{id}`   | Returns a product by its ID         |
-| POST   | `/api/orders`    | Places a new order with customer + items    |
+| Method | URL                  | Description                              |
+|--------|----------------------|------------------------------------------|
+| GET    | `/hello`             | Simple greeting test endpoint            |
+| GET    | `/api/products`      | Returns all available products           |
+| GET    | `/api/products/{id}` | Returns a product by its ID              |
+| POST   | `/api/orders`        | Places a new order with customer + items |
 
 > More endpoints will be added as the project evolves.
 
@@ -182,31 +182,31 @@ When saving through ProductRepository.save():
 
 ## Project Requirements Checklist
 
-| Area                              | Requirement                                                | Implemented |
-|-----------------------------------|------------------------------------------------------------|-------------|
-| **Core Functionality**            | REST API for product and order management                 | ✅           |
-|                                   | Fetch all products (`GET /api/products`)                   | ✅           |
-|                                   | Fetch single product by ID (`GET /api/products/{id}`)      | ✅           |
-|                                   | Create order (`POST /api/orders`)                          | ✅           |
-|                                   | In-memory storage using Java Collections (`List`, `Map`)   | ✅           |
-|                                   | Basic object-oriented modeling (`Product`, `Order`, etc.)  | ✅           |
-| **Validation & Error Handling**   | Input validation using annotations (`@NotBlank`, etc.)     | ✅           |
-|                                   | Return `400 Bad Request` for invalid input                 | ✅           |
-|                                   | Return `404 Not Found` for missing product ID              | ✅           |
-|                                   | Custom exception handling with `@ControllerAdvice`         | ✅           |
-| **Code Structure**                | Separation into layers: Controller, Service, Repository    | ✅           |
-|                                   | DTO usage for request handling                             | ✅           |
-| **Testing**                       | Unit tests using JUnit 5                                   | ✅           |
-|                                   | ProductService test                                        | ✅           |
-|                                   | OrderService test                                          | ✅           |
-| **Tools & Frameworks**            | Java 21                                                    | ✅           |
-|                                   | Spring Boot 3.4.5                                          | ✅           |
-|                                   | Maven                                                      | ✅           |
-|                                   | JSON-based API communication                               | ✅           |
-| **Documentation**                 | `README.md` with build/run instructions                    | ✅           |
-|                                   | API endpoint overview                                      | ✅           |
-|                                   | Workflow and architecture description                      | ✅           |
-|                                   | Requirements checklist                                     | ✅           |
+| Area                            | Requirement                                               | Implemented |
+|---------------------------------|-----------------------------------------------------------|-------------|
+| **Core Functionality**          | REST API for product and order management                 | ✅           |
+|                                 | Fetch all products (`GET /api/products`)                  | ✅           |
+|                                 | Fetch single product by ID (`GET /api/products/{id}`)     | ✅           |
+|                                 | Create order (`POST /api/orders`)                         | ✅           |
+|                                 | In-memory storage using Java Collections (`List`, `Map`)  | ✅           |
+|                                 | Basic object-oriented modeling (`Product`, `Order`, etc.) | ✅           |
+| **Validation & Error Handling** | Input validation using annotations (`@NotBlank`, etc.)    | ✅           |
+|                                 | Return `400 Bad Request` for invalid input                | ✅           |
+|                                 | Return `404 Not Found` for missing product ID             | ✅           |
+|                                 | Custom exception handling with `@ControllerAdvice`        | ✅           |
+| **Code Structure**              | Separation into layers: Controller, Service, Repository   | ✅           |
+|                                 | DTO usage for request handling                            | ✅           |
+| **Testing**                     | Unit tests using JUnit 5                                  | ✅           |
+|                                 | ProductService test                                       | ✅           |
+|                                 | OrderService test                                         | ✅           |
+| **Tools & Frameworks**          | Java 21                                                   | ✅           |
+|                                 | Spring Boot 3.4.5                                         | ✅           |
+|                                 | Maven                                                     | ✅           |
+|                                 | JSON-based API communication                              | ✅           |
+| **Documentation**               | `README.md` with build/run instructions                   | ✅           |
+|                                 | API endpoint overview                                     | ✅           |
+|                                 | Workflow and architecture description                     | ✅           |
+|                                 | Requirements checklist                                    | ✅           |
 
 ## Personal Reflection
 

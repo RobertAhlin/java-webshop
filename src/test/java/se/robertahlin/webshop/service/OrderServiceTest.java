@@ -28,7 +28,7 @@ class OrderServiceTest {
 
     @Test
     void shouldPlaceOrderSuccessfully() {
-        // Arrange
+        // Skapar en produkt med pris 349 och 5 i lager
         long productId = 1L;
         Product product = new Product(productId, "Laptop Stand", "Ergonomic stand", 349.0, "", 5);
         when(productRepository.findById(productId)).thenReturn(Optional.of(product));
@@ -37,13 +37,13 @@ class OrderServiceTest {
         OrderItem item = new OrderItem(productId, 2, 0.0); // price is set later
         List<OrderItem> items = List.of(item);
 
-        // Act
+        // Kör själva testet
         Order order = orderService.placeOrder(items, customer);
 
-        // Assert
+        // Verifiera resultat
         assertNotNull(order.getId());
-        assertEquals(2, order.getItems().get(0).getQuantity());
-        assertEquals(349.0, order.getItems().get(0).getPriceAtPurchase());
+        assertEquals(2, order.getItems().getFirst().getQuantity());
+        assertEquals(349.0, order.getItems().getFirst().getPriceAtPurchase());
         assertEquals(698.0, order.getTotalAmount());
         assertNotNull(order.getOrderDate());
 
@@ -52,7 +52,7 @@ class OrderServiceTest {
 
     @Test
     void shouldThrowExceptionIfProductNotFound() {
-        // Arrange
+        // Skapa test med produkt 999
         long productId = 999L;
         when(productRepository.findById(productId)).thenReturn(Optional.empty());
 
@@ -60,7 +60,7 @@ class OrderServiceTest {
         OrderItem item = new OrderItem(productId, 1, 0.0);
         List<OrderItem> items = List.of(item);
 
-        // Act & Assert
+        // Testa och verifiera
         assertThrows(ProductNotFoundException.class, () -> {
             orderService.placeOrder(items, customer);
         });

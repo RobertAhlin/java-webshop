@@ -28,17 +28,19 @@ class ProductServiceTest {
 
     @Test
     void shouldReturnProductWhenIdExists() {
-        // Arrange
+        // Arrangera test med produkt id 1.
         Product product = new Product(1, "Test", "Desc", 99.0, "", 10);
         ProductDTO productDTO = new ProductDTO();
+        productDTO.setId(1L);                 // 🟢 Sätt korrekt id
+        productDTO.setName("Test");          // 🟢 Sätt korrekt namn
 
         when(productRepository.findById(1L)).thenReturn(Optional.of(product));
         when(productMapper.toDto(product)).thenReturn(productDTO);
 
-        // Act
+        // Utför själva testet
         ProductDTO result = productService.getProductById(1L);
 
-        // Assert
+        // Resultatet
         assertNotNull(result);
         assertEquals(1L, result.getId());
         assertEquals("Test", result.getName());
@@ -46,10 +48,10 @@ class ProductServiceTest {
 
     @Test
     void shouldThrowExceptionWhenProductNotFound() {
-        // Arrange
+        // Test med produkt id 99 (som inte finns)
         when(productRepository.findById(99L)).thenReturn(Optional.empty());
 
-        // Act & Assert
+        // Test och resultat
         assertThrows(ProductNotFoundException.class, () -> {
             productService.getProductById(99L);
         });

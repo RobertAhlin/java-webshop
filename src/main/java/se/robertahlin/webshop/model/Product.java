@@ -13,5 +13,5 @@ public class Product {
     private String description;
     private double price;
     private String imageUrl;
-    private int stock; // optional, but included
+    private int stock;
 }
