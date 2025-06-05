@@ -33,13 +33,13 @@ public class ProductService {
         return mapper.toDto(product);
     }
 
-    public ProductDTO createProduct(CreateProductRequest request) {
+    public ProductDTO createProduct(CreateProductDTO request) {
         Product product = mapper.toEntity(request);
         Product saved = productRepository.save(product);
         return mapper.toDto(saved);
     }
 
-    public ProductDTO updateProduct(Long id, UpdateProductRequest request) {
+    public ProductDTO updateProduct(Long id, UpdateProductDTO request) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException(id));
 

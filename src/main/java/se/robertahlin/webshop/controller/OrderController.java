@@ -2,7 +2,7 @@ package se.robertahlin.webshop.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import se.robertahlin.webshop.dto.OrderRequest;
+import se.robertahlin.webshop.dto.OrderRequestDTO;
 import se.robertahlin.webshop.model.Order;
 import se.robertahlin.webshop.service.OrderService;
 import jakarta.validation.Valid;
@@ -18,8 +18,8 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<Order> placeOrder(@Valid @RequestBody OrderRequest orderRequest) {
-        Order order = orderService.placeOrder(orderRequest.getItems(), orderRequest.getCustomerInfo());
+    public ResponseEntity<Order> placeOrder(@Valid @RequestBody OrderRequestDTO orderRequestDTO) {
+        Order order = orderService.placeOrder(orderRequestDTO.getItems(), orderRequestDTO.getCustomerInfo());
         return ResponseEntity.ok(order);
     }
 }

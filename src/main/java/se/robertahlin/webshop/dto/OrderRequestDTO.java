@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderRequest {
+public class OrderRequestDTO {
 
     @NotNull(message = "Customer info is required")
     private CustomerInfo customerInfo;

@@ -30,7 +30,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody CreateProductRequest request) {
+    public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody CreateProductDTO request) {
         ProductDTO created = productService.createProduct(request);
         return ResponseEntity
                 .created(URI.create("/api/products/" + created.getId()))
@@ -40,7 +40,7 @@ public class ProductController {
     @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> updateProduct(
             @PathVariable Long id,
-            @Valid @RequestBody UpdateProductRequest request) {
+            @Valid @RequestBody UpdateProductDTO request) {
 
         return ResponseEntity.ok(productService.updateProduct(id, request));
     }

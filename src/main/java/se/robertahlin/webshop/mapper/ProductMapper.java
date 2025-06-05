@@ -18,7 +18,7 @@ public class ProductMapper {
         return dto;
     }
 
-    public Product toEntity(CreateProductRequest req) {
+    public Product toEntity(CreateProductDTO req) {
         Product product = new Product();
         product.setName(req.getName());
         product.setDescription(req.getDescription());
@@ -28,7 +28,7 @@ public class ProductMapper {
         return product;
     }
 
-    public void updateEntityFromRequest(UpdateProductRequest req, Product product) {
+    public void updateEntityFromRequest(UpdateProductDTO req, Product product) {
         if (req.getName() != null) product.setName(req.getName());
         if (req.getDescription() != null) product.setDescription(req.getDescription());
         if (req.getPrice() != null) product.setPrice(req.getPrice());
