@@ -175,16 +175,10 @@ When saving through ProductRepository.save():
 | POST   | `/api/products`       | Creates a new product                                |
 | PUT    | `/api/products/{id}`  | Updates an existing product by its ID                |
 | DELETE | `/api/products/{id}`  | Deletes a product by its ID                          |
-| GET    | `/api/orders`         | Returns all orders                                   |
-| GET    | `/api/orders/{id}`    | Returns an order by its ID                           |
 | POST   | `/api/orders`         | Places a new order with customer info and items      |
 
-> *Note: Updating or deleting orders is intentionally not included in this project. This is a conscious design decision to limit the project scope and complexity. However, the knowledge is demonstrated through the full implementation of create, update, and delete operations for products.*
+> *Note: CRUD for orders is intentionally not included in this project. This is a conscious design decision to limit the project scope and complexity. However, the knowledge is demonstrated through the full implementation of create, update, and delete operations for products.*
 
-
-## 👤 Author
-
-- Robert Ahlin
 
 ## Project Requirements Checklist
 
@@ -231,3 +225,7 @@ This project has been a valuable learning experience in backend development usin
 Additionally, I’ve learned to troubleshoot problems effectively using IntelliJ and Postman, and how to incrementally build and test features in a realistic development flow.
 
 Overall, this project has helped me feel more confident in developing and testing backend systems in Java and has laid a solid foundation for future projects.
+
+## 👤 Author
+
+- Robert Ahlin
