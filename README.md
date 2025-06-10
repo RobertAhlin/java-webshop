@@ -165,16 +165,22 @@ When saving through ProductRepository.save():
 
 
 
-## API Endpoints (in progress)
+## API Endpoints
 
-| Method | URL                  | Description                              |
-|--------|----------------------|------------------------------------------|
-| GET    | `/hello`             | Simple greeting test endpoint            |
-| GET    | `/api/products`      | Returns all available products           |
-| GET    | `/api/products/{id}` | Returns a product by its ID              |
-| POST   | `/api/orders`        | Places a new order with customer + items |
+| Method | URL                   | Description                                           |
+|--------|-----------------------|-------------------------------------------------------|
+| GET    | `/hello`              | Simple greeting test endpoint                        |
+| GET    | `/api/products`       | Returns all available products                       |
+| GET    | `/api/products/{id}`  | Returns a product by its ID                          |
+| POST   | `/api/products`       | Creates a new product                                |
+| PUT    | `/api/products/{id}`  | Updates an existing product by its ID                |
+| DELETE | `/api/products/{id}`  | Deletes a product by its ID                          |
+| GET    | `/api/orders`         | Returns all orders                                   |
+| GET    | `/api/orders/{id}`    | Returns an order by its ID                           |
+| POST   | `/api/orders`         | Places a new order with customer info and items      |
 
-> More endpoints will be added as the project evolves.
+> *Note: Updating or deleting orders is intentionally not included in this project. This is a conscious design decision to limit the project scope and complexity. However, the knowledge is demonstrated through the full implementation of create, update, and delete operations for products.*
+
 
 ## 👤 Author
 
