@@ -3,6 +3,8 @@ package se.robertahlin.webshop.exception;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -27,6 +29,16 @@ public class GlobalExceptionHandler {
         errorResponse.put("errors", validationErrors);
 
         return ResponseEntity.badRequest().body(errorResponse);
+    }
+
+    @ExceptionHandler(InsufficientStockException.class)
+    public ResponseEntity<Map<String, Object>> handleInsufficientStock(InsufficientStockException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of(
+                "timestamp", LocalDateTime.now(),
+                "status", HttpStatus.BAD_REQUEST.value(),
+                "error", "Bad Request",
+                "message", ex.getMessage()
+        ));
     }
 
     @ExceptionHandler(ProductNotFoundException.class)

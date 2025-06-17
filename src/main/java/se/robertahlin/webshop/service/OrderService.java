@@ -5,6 +5,7 @@ import se.robertahlin.webshop.model.*;
 import se.robertahlin.webshop.repository.OrderRepository;
 import se.robertahlin.webshop.repository.ProductRepository;
 import se.robertahlin.webshop.exception.ProductNotFoundException;
+import se.robertahlin.webshop.exception.InsufficientStockException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -30,8 +31,19 @@ public class OrderService {
             Product product = productRepository.findById(item.getProductId())
                     .orElseThrow(() -> new ProductNotFoundException(item.getProductId()));
 
+            if (item.getQuantity() > product.getStock()) {
+                throw new InsufficientStockException(
+                        product.getName(),
+                        item.getQuantity(),
+                        product.getStock()
+                );
+            }
+
             double itemTotal = product.getPrice() * item.getQuantity();
             totalAmount += itemTotal;
+
+            product.setStock(product.getStock() - item.getQuantity());
+            productRepository.save(product);
 
             validatedItems.add(new OrderItem(
                     item.getProductId(),
